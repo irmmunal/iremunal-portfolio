@@ -12,19 +12,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Menu button interaction (can be expanded for mobile menu)
+// Menu button click handler
 const menuBtn = document.getElementById('menuBtn');
 if (menuBtn) {
     menuBtn.addEventListener('click', () => {
-        // Add mobile menu functionality here if needed
-        console.log('Menu clicked');
+        alert('Menu functionality - Add your mobile menu here!');
     });
 }
 
-// Intersection Observer for scroll animations
+// Navbar shadow on scroll
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    } else {
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+// Fade in animation on scroll
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -36,30 +45,18 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Animate elements on scroll
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.about-card, .service-card, .testimonial-card');
+// Add scroll animation to cards
+window.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.about-card, .service-card, .project-card');
     
-    animatedElements.forEach(el => {
+    animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease-out';
+        el.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
         observer.observe(el);
     });
 });
 
-// Add active state to navigation on scroll
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
-    
-    lastScroll = currentScroll;
-});
+// Console log for debugging
+console.log('Portfolio website loaded successfully!');
+console.log('Created by İrem Ünal - Data Analyst');
