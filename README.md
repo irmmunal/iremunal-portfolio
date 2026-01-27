@@ -1,165 +1,83 @@
 # İrem Ünal - Data Analyst Portfolio
+https://irmmunal.github.io/iremunal-portfolio/
 
-Merhaba! Ben İrem Ünal, bir data analyst olarak portfolyo websitemi sizlerle paylaşıyorum. Modern ve minimal bir tasarımla projelerimi sergilemek için hazırladım.
+**Data Analyst** | Turning data into clear decisions
 
-## 🎨 Özellikler
+## 👋 Hakkımda
 
-- ✅ Minimal ve profesyonel tasarım
-- ✅ Tamamen responsive (mobil, tablet, desktop)
-- ✅ Tableau dashboard entegrasyonu
-- ✅ Detaylı proje sayfaları
-- ✅ Smooth scroll ve mobil menü
-- ✅ SEO dostu yapı
-- ✅ Hızlı yükleme
+Merhaba! Ben İrem Ünal, veri analizi ve görselleştirme konusunda tutkulu bir data analyst'im. Karmaşık veri setlerini anlamlı içgörülere dönüştürerek, iş kararlarına destek olmayı seviyorum.
 
-## 📁 Dosya Yapısı
+Analitik düşünce yapımı ve teknik becerilerimi birleştirerek, verinin arkasındaki hikayeyi ortaya çıkarıyor ve iş hedeflerine ulaşmada stratejik çözümler sunuyorum.
 
-```
-portfolio/
-│
-├── index.html                          # Ana sayfa
-├── style.css                           # Tüm stiller
-├── script.js                           # JavaScript fonksiyonları
-│
-├── project-customer-churn.html         # Proje: Customer Churn Analysis
-├── project-sales-dashboard.html        # Proje: Sales Performance Dashboard
-├── project-sentiment-analysis.html     # Proje: Sentiment Analysis
-├── project-supply-chain.html           # Proje: Supply Chain Optimization
-│
-└── README.md                           # Bu dosya
-```
+## 💼 Uzmanlık Alanlarım
 
-## 🚀 Nasıl Kullanılır
+- **Veri Analizi:** Python, Pandas, NumPy ile veri işleme ve analiz
+- **Veri Görselleştirme:** Tableau, Matplotlib, Seaborn ile etkileyici dashboardlar
+- **Veritabanı Yönetimi:** SQL (PostgreSQL, MySQL) ile veri sorgulama ve yönetim
+- **Makine Öğrenmesi:** Regression, Classification, Clustering algoritmaları
+- **İstatistiksel Analiz:** Hipotez testleri, A/B testing, trend analizi
 
-### GitHub Pages'de Yayınlama
+## 🛠️ Teknik Becerilerim
 
-1. GitHub'da yeni bir repository oluşturdum
-2. Repository adını `kullaniciadi.github.io` yaptım
-3. Tüm dosyaları bu repository'e yükledim
-4. Settings > Pages bölümünden GitHub Pages'i aktif ettim
-5. Birkaç dakika sonra sitem `https://kullaniciadi.github.io` adresinde yayına girdi!
+**Programlama & Analiz:**
+- Python (Pandas, NumPy, Scikit-learn)
+- SQL (PostgreSQL, MySQL)
+- R (Temel seviye)
 
-## ✏️ Kendi Bilgilerinizi Nasıl Eklersiniz
+**Veri Görselleştirme:**
+- Tableau Desktop & Server
+- Power BI
+- Matplotlib, Seaborn, Plotly
 
-### 1. Kişisel Bilgilerinizi Güncelleyin
+**Araçlar & Teknolojiler:**
+- Jupyter Notebook
+- Git & GitHub
+- Excel (Advanced - Pivot Tables, VBA)
+- Google Analytics
 
-**index.html** dosyasında şunları değiştirin:
-- Hero bölümündeki başlık ve alt başlığı
-- About bölümündeki tanıtım metnini
-- Skills bölümündeki yetenekleri
-- Contact bölümündeki email, LinkedIn, GitHub linklerini
+**Soft Skills:**
+- Problem çözme ve analitik düşünme
+- Veri odaklı hikaye anlatımı
+- İş zekası ve stratejik düşünme
+- Ekip çalışması ve iletişim
 
-### 2. Projelerinizi Ekleyin
+## 🎯 İlgi Alanlarım
 
-**Ana sayfada (index.html):**
-Projects bölümünde kendi projelerinizi ekleyebilirsiniz:
+- Müşteri davranış analizi ve churn prediction
+- Sales analytics ve performance optimization
+- Natural Language Processing ve sentiment analizi
+- Supply chain optimization
+- Veri görselleştirme ve dashboard tasarımı
 
-```html
-<a href="yeni-proje.html" class="project-card">
-    <h3 class="project-title">Proje Adı</h3>
-    <p class="project-description">Kısa açıklama</p>
-    <ul class="project-details">
-        <li><span class="detail-label">Dataset:</span> Veri seti bilgisi</li>
-        <li><span class="detail-label">Tools:</span> Kullanılan araçlar</li>
-        <li><span class="detail-label">Outcome:</span> Sonuçlar</li>
-    </ul>
-</a>
-```
+## 🌟 Projelerim
 
-### 3. Tableau Dashboard'larımı Nasıl Eklerim
+Portfolyo websitemde paylaştığım projeler:
 
-Proje detay sayfalarında `YOUR_TABLEAU_PUBLIC_EMBED_URL` yazan yere kendi Tableau Public embed linkimi ekliyorum:
+1. **Customer Churn Analysis** - Müşteri kaybı tahmin modeli
+2. **Sales Performance Dashboard** - Satış performans analizi
+3. **Social Media Sentiment Analysis** - Sosyal medya duygu analizi
+4. **Supply Chain Optimization** - Tedarik zinciri optimizasyonu
 
-**Tableau Public'den embed link alma:**
-1. Tableau Public'de dashboard'umu açıyorum
-2. Share butonuna tıklıyorum
-3. "Embed Code" seçeneğini seçiyorum
-4. `src="..."` içindeki linki kopyalıyorum
-5. Proje sayfasındaki placeholder'a yapıştırıyorum
+Daha fazla proje için: [https://iremunal.github.io](https://iremunal.github.io)
 
-```html
-<iframe 
-    src="https://public.tableau.com/views/YourDashboard/Dashboard1?:embed=y&:display_count=yes"
-    width="100%" 
-    height="100%" 
-    frameborder="0"
-    allowfullscreen>
-</iframe>
-```
+## 📫 İletişim
 
-### 4. Kendi Görsellerimi Nasıl Eklerim
+Benimle iletişime geçmek için:
 
-**İki seçeneğim var:**
+- 💼 LinkedIn: [linkedin.com/in/iremunal](https://www.linkedin.com/in/irem-ünal-da/)
+- 🐙 GitHub: [github.com/iremunal](https://github.com/iremunal)
+- 📊 Tableau Public: [public.tableau.com/profile/iremunal](https://public.tableau.com/app/profile/irem.nal/vizzes)
 
-**Seçenek A: Doğrudan URL kullanırım**
-```html
-<img src="https://sirketadi.com/gorsel.png" alt="Açıklama">
-```
+## 🚀 Hedeflerim
 
-**Seçenek B: Dosya yükleme (tercih ettiğim)**
-1. Repository'mde `images` klasörü oluşturuyorum
-2. Görsellerimi bu klasöre yüklüyorum
-3. HTML'de şöyle kullanıyorum:
-```html
-<img src="images/gorsel.png" alt="Açıklama">
-```
-
-### 5. Yeni Proje Sayfası Nasıl Eklerim
-
-1. Mevcut bir proje sayfasını kopyalıyorum (örn: `project-customer-churn.html`)
-2. Yeni isimle kaydediyorum (örn: `yeni-projemiz.html`)
-3. İçeriği kendi projeme göre düzenliyorum
-4. Ana sayfadaki Projects bölümüne linkini ekliyorum
-
-### 6. Renkleri Değiştirmek İstersem
-
-**style.css** dosyasının başındaki `:root` bölümünde renkleri özelleştirebilirim:
-
-```css
-:root {
-    --bg-main: #E6E6E4;        /* Ana arka plan */
-    --bg-card: #F2F2F0;        /* Kart arka planı */
-    --text-main: #111111;      /* Ana metin rengi */
-    --text-muted: #6A6A6A;     /* Soluk metin */
-    --border-soft: #D1D1CF;    /* Kenarlık rengi */
-    --accent-soft: #9A9A9A;    /* Vurgu rengi */
-}
-```
-
-## 📱 Responsive Tasarım
-
-Sitem otomatik olarak farklı cihazlarda optimize görünüyor:
-- **Desktop:** 900px+ geniş container
-- **Tablet:** 768px - 900px arası
-- **Mobil:** 768px ve altı (hamburger menü aktif)
-
-## 🔧 Teknik Detaylar
-
-- **HTML5** semantic markup
-- **CSS3** modern özellikler (Grid, Flexbox)
-- **Vanilla JavaScript** (framework yok)
-- **Google Fonts:** Inter ve IBM Plex Mono
-- **Özel font boyutları ve spacing** minimal estetik için
-
-## 💡 Öğrendiklerim
-
-1. **Görseller:** Yüksek kaliteli görseller kullanıyorum ama optimize ediyorum (PNG/JPG, 100KB altı ideal)
-2. **Tableau:** Dashboard'larımı public yapmayı unutmuyorum yoksa embed çalışmıyor
-3. **Git:** Her değişiklikten sonra commit + push yapıyorum
-4. **Test:** Değişiklikleri önce local'de test ediyorum
-5. **SEO:** Her sayfanın `<title>` tag'ini farklılaştırıyorum
-
-## 📞 İletişim
-
-Benimle iletişime geçmek isterseniz:
-- Email: your.email@example.com
-- LinkedIn: linkedin.com/in/yourprofile
-- GitHub: github.com/yourusername
-
-## 📄 Lisans
-
-Bu portfolyo websitesi açık kaynaklıdır. İsteyen kullanabilir, düzenleyebilir ve paylaşabilir.
+Veri bilimi alanında kendimi sürekli geliştirmeyi hedefliyorum. Özellikle:
+- Deep Learning ve AI uygulamalarına odaklanmak
+- Daha büyük veri setleri ile çalışmak
+- Sektörde impact yaratan projeler geliştirmek
+- Veri analizi topluluğuna katkıda bulunmak
 
 ---
 
-**Not:** Bu portfolyo sitesini yapay zeka destekli araçlar kullanarak oluşturdum ve kendi projelerime göre özelleştirdim. 🚀
+💡 **"Data is the new oil, but analytics is the combustion engine."**
+
+⭐ Bu portfolyo websitesini beğendiyseniz, GitHub'da star vermeyi unutmayın!
