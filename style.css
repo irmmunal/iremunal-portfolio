@@ -6,7 +6,6 @@
 }
 
 :root {
-    /* Figma'daki renkler */
     --primary-purple: #4B3D7A;
     --primary-orange: #FF7A45;
     --gradient-start: #4B3D7A;
@@ -29,6 +28,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -44,6 +44,7 @@ body {
     top: 0;
     background-color: var(--bg-light);
     z-index: 1000;
+    transition: box-shadow 0.3s ease;
 }
 
 .navbar .container {
@@ -77,6 +78,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(75, 61, 122, 0.3);
+    font-family: 'Poppins', sans-serif;
 }
 
 .menu-btn:hover {
@@ -93,7 +95,7 @@ body {
 
 .hero .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 60px;
     align-items: center;
 }
@@ -115,13 +117,14 @@ body {
     line-height: 1.7;
     color: var(--text-gray);
     margin-bottom: 32px;
-    max-width: 480px;
+    max-width: 550px;
 }
 
 .hero-buttons {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .btn {
@@ -134,12 +137,14 @@ body {
     align-items: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary {
     background-color: var(--primary-orange);
     color: white;
     box-shadow: 0 4px 12px rgba(255, 122, 69, 0.3);
+    border: none;
 }
 
 .btn-primary:hover {
@@ -160,7 +165,20 @@ body {
     transform: translateY(-2px);
 }
 
-.hero-graphic {
+.tech-stack {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.tech-stack span {
+    opacity: 0.7;
+}
+
+.hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,30 +195,12 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-/* ==================== LOGOS SECTION ==================== */
-.logos {
-    padding: 40px 0;
-    border-top: 1px solid #E0E0E0;
-    border-bottom: 1px solid #E0E0E0;
-}
-
-.logos-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    align-items: center;
-}
-
-.logo-item {
-    text-align: center;
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--text-gray);
-    opacity: 0.7;
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-20px); 
+    }
 }
 
 /* ==================== ABOUT SECTION ==================== */
@@ -223,6 +223,11 @@ body {
     flex-direction: column;
     gap: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
 }
 
 .about-image {
@@ -260,11 +265,11 @@ body {
     text-align: center;
 }
 
-.title-accent {
+.title-purple {
     color: var(--primary-purple);
 }
 
-.title-accent-orange {
+.title-orange {
     color: var(--primary-orange);
 }
 
@@ -334,13 +339,13 @@ body {
     padding: 80px 0 100px;
 }
 
-.testimonials-grid {
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
 }
 
-.testimonial-card {
+.project-card {
     border-radius: 32px;
     padding: 32px;
     display: flex;
@@ -348,40 +353,39 @@ body {
     align-items: flex-start;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    color: white;
 }
 
-.testimonial-card:hover {
+.project-card:hover {
     transform: translateY(-8px);
 }
 
-.testimonial-orange {
+.card-orange {
     background: linear-gradient(135deg, var(--primary-orange), #FF9468);
-    color: white;
 }
 
-.testimonial-purple {
+.card-purple {
     background: linear-gradient(135deg, var(--primary-purple), #6B5BA0);
-    color: white;
 }
 
-.testimonial-avatar {
+.project-avatar {
     flex-shrink: 0;
 }
 
-.testimonial-avatar img {
+.project-avatar img {
     width: 64px;
     height: 64px;
     border-radius: 50%;
     border: 3px solid white;
 }
 
-.testimonial-content h4 {
+.project-content h4 {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-.testimonial-content p {
+.project-content p {
     font-size: 14px;
     line-height: 1.6;
     opacity: 0.95;
@@ -500,7 +504,7 @@ body {
         gap: 40px;
     }
 
-    .hero-graphic {
+    .hero-visual {
         order: -1;
     }
 
@@ -521,7 +525,7 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .testimonials-grid {
+    .projects-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -537,11 +541,6 @@ body {
 
     .section-title-center {
         font-size: 42px;
-    }
-
-    .logos-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
     }
 
     .footer-content {
@@ -562,6 +561,11 @@ body {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 12px;
     }
 }
 
@@ -590,5 +594,9 @@ body {
 
     .section-title-center {
         font-size: 32px;
+    }
+
+    .tech-stack {
+        font-size: 14px;
     }
 }
