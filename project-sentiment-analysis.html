@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Sentiment Analysis - İrem Ünal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Portfolio</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="project-header">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <h1 class="project-hero-title">Social Media Sentiment Analysis</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Dataset:</span>
+                    <span>50K+ social media posts</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools:</span>
+                    <span>Python, NLP, VADER</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration:</span>
+                    <span>6 weeks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content section-alt">
+        <div class="container">
+            
+            <div class="content-block">
+                <h3>Project Overview</h3>
+                <p>
+                    Analyzed customer sentiment from social media posts to understand brand perception and identify product improvement opportunities. The project processed over 50,000 posts from Twitter, Reddit, and product review sites using natural language processing techniques.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Business Context</h3>
+                <p>
+                    The company launched a new product line but lacked systematic insight into customer sentiment. Traditional surveys provided limited feedback, while thousands of organic customer comments remained unanalyzed. The goal was to extract actionable insights from this unstructured data.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Methodology</h3>
+                <ul>
+                    <li>Data collection via APIs and web scraping (Twitter API, Reddit API)</li>
+                    <li>Text preprocessing: cleaning, tokenization, lemmatization</li>
+                    <li>Sentiment scoring using VADER (Valence Aware Dictionary and sEntiment Reasoner)</li>
+                    <li>Topic modeling with Latent Dirichlet Allocation (LDA)</li>
+                    <li>Time series analysis of sentiment trends</li>
+                    <li>Aspect-based sentiment analysis for specific product features</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Sentiment Analysis Implementation</h3>
+                <p>Core code for processing and analyzing sentiment:</p>
+                <div class="code-block">
+import pandas as pd
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import re
+from nltk.corpus import stopwords
+
+# Initialize VADER
+analyzer = SentimentIntensityAnalyzer()
+
+def preprocess_text(text):
+    # Remove URLs, mentions, hashtags
+    text = re.sub(r'http\S+|www\S+|@\w+|#\w+', '', text)
+    # Remove special characters and numbers
+    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    return text.lower().strip()
+
+def get_sentiment(text):
+    scores = analyzer.polarity_scores(text)
+    # Classify based on compound score
+    if scores['compound'] >= 0.05:
+        return 'positive'
+    elif scores['compound'] <= -0.05:
+        return 'negative'
+    else:
+        return 'neutral'
+
+# Apply to dataset
+df['clean_text'] = df['text'].apply(preprocess_text)
+df['sentiment'] = df['clean_text'].apply(get_sentiment)
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Sentiment Trends Dashboard</h3>
+                <p>Interactive visualization showing sentiment evolution over time:</p>
+                <div class="dashboard-embed">
+                    <iframe 
+                        src="YOUR_TABLEAU_SENTIMENT_DASHBOARD_URL"
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">
+                    <em>Note: Replace with your Tableau sentiment dashboard embed link</em>
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Key Findings</h3>
+                <p>The analysis revealed important insights about customer perception:</p>
+                <ul>
+                    <li><strong>Overall Sentiment:</strong> 52% positive, 31% neutral, 17% negative</li>
+                    <li><strong>Peak Negativity:</strong> Spike in negative sentiment 2 weeks post-launch due to shipping delays</li>
+                    <li><strong>Product Quality:</strong> 78% positive mentions about build quality</li>
+                    <li><strong>Customer Service:</strong> Most negative comments (65%) related to support response time</li>
+                    <li><strong>Feature Requests:</strong> Battery life mentioned in 1,200+ posts as improvement area</li>
+                    <li><strong>Competitor Comparison:</strong> Brand viewed more favorably on design but lagged on features</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Topic Modeling Results</h3>
+                <p>Identified main discussion themes through LDA:</p>
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/800x450/E6E6E4/6A6A6A?text=Topic+Model+Visualization" alt="Topic Modeling">
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">
+                    <em>Replace with actual topic model visualization</em>
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Sentiment Distribution</h3>
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/800x450/E6E6E4/6A6A6A?text=Sentiment+Distribution+Chart" alt="Sentiment Distribution">
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">
+                    <em>Replace with actual sentiment distribution chart</em>
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Actionable Recommendations</h3>
+                <p>Based on the analysis, three priority actions were identified:</p>
+                <ul>
+                    <li><strong>Improve Customer Support Response Time:</strong> Implement chatbot for common queries and expand support team to reduce wait times from 48 hours to 4 hours</li>
+                    <li><strong>Enhance Battery Performance:</strong> Prioritize battery optimization in next software update, communicate improvement timeline to customers</li>
+                    <li><strong>Address Shipping Issues:</strong> Partner with alternative logistics providers and provide proactive shipping updates</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Business Impact</h3>
+                <ul>
+                    <li>Recommendations implemented within 6 weeks of presentation</li>
+                    <li>Customer satisfaction score improved from 3.2 to 4.1 stars (28% increase)</li>
+                    <li>Negative sentiment decreased by 40% after addressing key issues</li>
+                    <li>Support ticket volume reduced by 35% after chatbot deployment</li>
+                    <li>Analysis framework adopted for ongoing monthly monitoring</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Technical Challenges</h3>
+                <p>
+                    Handling sarcasm and context-dependent sentiment proved challenging. For example, "Great, now it won't turn on" tested as positive due to the word "great" but was clearly negative. This was addressed by implementing custom rules and training a more sophisticated model for ambiguous cases.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Technologies Used</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Python</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">NLTK</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">VADER</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Pandas</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Scikit-learn</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Matplotlib</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Tableau</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Twitter API</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Beautiful Soup</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 İrem Ünal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

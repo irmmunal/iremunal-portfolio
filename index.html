@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İrem Ünal - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Portfolio</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">İrem Ünal</h1>
+            <p class="hero-subtitle">Data Analyst · Turning data into clear decisions.</p>
+            <div class="hero-skills">
+                <span>Python</span>
+                <span class="separator">·</span>
+                <span>SQL</span>
+                <span class="separator">·</span>
+                <span>Tableau</span>
+                <span class="separator">·</span>
+                <span>Machine Learning</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <p class="about-text">
+                I analyze complex datasets to uncover patterns, trends, and actionable insights with a focus on clarity and impact. My approach combines statistical rigor with business intuition to deliver data-driven solutions that matter.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <a href="project-customer-churn.html" class="project-card">
+                    <h3 class="project-title">Customer Churn Analysis</h3>
+                    <p class="project-description">Identified key behavioral drivers increasing churn risk.</p>
+                    <ul class="project-details">
+                        <li><span class="detail-label">Dataset:</span> Telecom customers</li>
+                        <li><span class="detail-label">Tools:</span> Python, Pandas, Logistic Regression</li>
+                        <li><span class="detail-label">Outcome:</span> +22% churn prediction accuracy</li>
+                    </ul>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="project-sales-dashboard.html" class="project-card">
+                    <h3 class="project-title">Sales Performance Dashboard</h3>
+                    <p class="project-description">Interactive dashboard tracking KPIs across regions and products.</p>
+                    <ul class="project-details">
+                        <li><span class="detail-label">Dataset:</span> 3 years of sales data</li>
+                        <li><span class="detail-label">Tools:</span> Tableau, SQL</li>
+                        <li><span class="detail-label">Outcome:</span> Real-time insights for stakeholders</li>
+                    </ul>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="project-sentiment-analysis.html" class="project-card">
+                    <h3 class="project-title">Social Media Sentiment Analysis</h3>
+                    <p class="project-description">Analyzed customer feedback to identify product improvement areas.</p>
+                    <ul class="project-details">
+                        <li><span class="detail-label">Dataset:</span> 50K+ social media posts</li>
+                        <li><span class="detail-label">Tools:</span> Python, NLP, VADER</li>
+                        <li><span class="detail-label">Outcome:</span> 3 actionable recommendations</li>
+                    </ul>
+                </a>
+
+                <!-- Project 4 -->
+                <a href="project-supply-chain.html" class="project-card">
+                    <h3 class="project-title">Supply Chain Optimization</h3>
+                    <p class="project-description">Optimized inventory levels to reduce costs while maintaining service.</p>
+                    <ul class="project-details">
+                        <li><span class="detail-label">Dataset:</span> Warehouse operations data</li>
+                        <li><span class="detail-label">Tools:</span> Python, Pandas, Time Series</li>
+                        <li><span class="detail-label">Outcome:</span> 15% reduction in holding costs</li>
+                    </ul>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-list">
+                <span class="skill-item">Python</span>
+                <span class="separator">·</span>
+                <span class="skill-item">SQL</span>
+                <span class="separator">·</span>
+                <span class="skill-item">Pandas</span>
+                <span class="separator">·</span>
+                <span class="skill-item">NumPy</span>
+                <span class="separator">·</span>
+                <span class="skill-item">Tableau</span>
+                <span class="separator">·</span>
+                <span class="skill-item">Machine Learning</span>
+                <span class="separator">·</span>
+                <span class="skill-item">PostgreSQL</span>
+                <span class="separator">·</span>
+                <span class="skill-item">Data Visualization</span>
+                <span class="separator">·</span>
+                <span class="skill-item">Statistical Analysis</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-links">
+                <a href="/cdn-cgi/l/email-protection#9fe6f0eaedb1faf2fef6f3dffae7fef2eff3fab1fcf0f2" class="contact-link">Email</a>
+                <span class="separator">·</span>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">LinkedIn</a>
+                <span class="separator">·</span>
+                <a href="https://github.com/yourusername" target="_blank" class="contact-link">GitHub</a>
+                <span class="separator">·</span>
+                <a href="https://public.tableau.com/profile/yourprofile" target="_blank" class="contact-link">Tableau Public</a>
+            </div>
+            <p class="contact-availability">Available for data-focused roles.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 İrem Ünal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <scri

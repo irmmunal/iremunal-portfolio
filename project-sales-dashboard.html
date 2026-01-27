@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Performance Dashboard - İrem Ünal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Portfolio</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="project-header">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <h1 class="project-hero-title">Sales Performance Dashboard</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Dataset:</span>
+                    <span>3 years of sales data</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools:</span>
+                    <span>Tableau, SQL</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration:</span>
+                    <span>2 months</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content section-alt">
+        <div class="container">
+            
+            <div class="content-block">
+                <h3>Project Overview</h3>
+                <p>
+                    Developed an interactive Tableau dashboard to provide real-time visibility into sales performance across multiple dimensions including regions, products, sales representatives, and time periods. The dashboard serves as the central reporting tool for the sales leadership team.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Business Challenge</h3>
+                <p>
+                    The sales team relied on static monthly Excel reports that were time-consuming to produce and lacked interactivity. Leadership needed a dynamic solution that would allow them to drill down into performance metrics, identify trends, and make data-driven decisions quickly.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Solution Approach</h3>
+                <ul>
+                    <li>Consolidated sales data from multiple sources using SQL ETL pipeline</li>
+                    <li>Designed intuitive dashboard layout based on stakeholder interviews</li>
+                    <li>Implemented key metrics: revenue, growth rate, win rate, and average deal size</li>
+                    <li>Added interactive filters for region, product line, and time period</li>
+                    <li>Created drill-down capabilities for detailed analysis</li>
+                    <li>Established automated daily data refresh schedule</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Interactive Sales Dashboard</h3>
+                <p>The dashboard provides comprehensive visibility into sales performance:</p>
+                <div class="dashboard-embed">
+                    <iframe 
+                        src="YOUR_TABLEAU_SALES_DASHBOARD_URL"
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">
+                    <em>Note: Replace with your actual Tableau Public sales dashboard embed link</em>
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Executive Summary:</strong> High-level KPIs with year-over-year comparisons</li>
+                    <li><strong>Regional Performance:</strong> Geographic heat map showing sales distribution</li>
+                    <li><strong>Product Analysis:</strong> Revenue breakdown by product category with trends</li>
+                    <li><strong>Rep Performance:</strong> Individual sales rep metrics and rankings</li>
+                    <li><strong>Pipeline Health:</strong> Deal progression tracking and forecasting</li>
+                    <li><strong>Time Series Analysis:</strong> Monthly and quarterly trend visualization</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>SQL Data Pipeline</h3>
+                <p>Sample query used for aggregating sales data:</p>
+                <div class="code-block">
+WITH monthly_sales AS (
+    SELECT 
+        DATE_TRUNC('month', order_date) AS month,
+        region,
+        product_category,
+        sales_rep_id,
+        SUM(revenue) AS total_revenue,
+        COUNT(DISTINCT order_id) AS order_count,
+        AVG(deal_size) AS avg_deal_size
+    FROM sales_transactions
+    WHERE order_date >= '2023-01-01'
+    GROUP BY 1, 2, 3, 4
+)
+SELECT 
+    m.*,
+    r.rep_name,
+    r.team,
+    LAG(total_revenue) OVER (
+        PARTITION BY region, product_category 
+        ORDER BY month
+    ) AS prev_month_revenue
+FROM monthly_sales m
+JOIN sales_reps r ON m.sales_rep_id = r.id
+ORDER BY month DESC, total_revenue DESC;
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Dashboard Visualizations</h3>
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/800x450/E6E6E4/6A6A6A?text=Sales+Dashboard+Preview" alt="Sales Dashboard">
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">
+                    <em>Replace with actual dashboard screenshot</em>
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Impact & Results</h3>
+                <ul>
+                    <li>Reduced reporting time from 8 hours to 5 minutes per week</li>
+                    <li>Enabled real-time decision making for sales leadership</li>
+                    <li>Improved forecast accuracy by 18% through better visibility</li>
+                    <li>Identified underperforming regions, leading to targeted coaching</li>
+                    <li>Dashboard adopted by 50+ users across sales and operations teams</li>
+                    <li>Annual cost savings of $45K in reporting labor</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>User Feedback</h3>
+                <p>
+                    "This dashboard has transformed how we manage our sales team. We can now spot issues and opportunities in real-time rather than waiting for end-of-month reports. The drill-down capabilities are particularly powerful." - VP of Sales
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Technologies Used</h3>
+                <div class="skills-list">
+                    <span class="skill-item">Tableau Desktop</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Tableau Server</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">SQL (PostgreSQL)</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Python</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">Data Modeling</span>
+                    <span class="separator">·</span>
+                    <span class="skill-item">ETL</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 İrem Ünal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
