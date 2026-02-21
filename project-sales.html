@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Performance Dashboard - İrem Ünal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">İREM ÜNAL</a>
+            <div class="nav-menu">
+                <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN ↗</a>
+                <a href="index.html#projects">PROJECTS ↗</a>
+                <a href="index.html#tech">RESUME ↗</a>
+            </div>
+            <a href="mailto:your.email@example.com" class="cta-button">LET'S TALK →</a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <h1>Sales Performance Dashboard</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role:</span> Data Analyst
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration:</span> 2 months
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools:</span> Tableau, SQL, Python
+                </div>
+            </div>
+            <div class="tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Data Visualization</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>Developed an interactive Tableau dashboard to provide real-time visibility into sales performance across multiple dimensions including regions, products, sales representatives, and time periods. The dashboard serves as the central reporting tool for the sales leadership team.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Business Challenge</h2>
+                <p>The sales team relied on static monthly Excel reports that were time-consuming to produce and lacked interactivity. Leadership needed a dynamic solution that would allow them to drill down into performance metrics, identify trends, and make data-driven decisions quickly.</p>
+                <p>Weekly reporting took 8 hours of manual work, and insights were often outdated by the time reports reached decision-makers.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Solution Approach</h2>
+                <ul>
+                    <li>Consolidated sales data from multiple sources using SQL ETL pipeline</li>
+                    <li>Designed intuitive dashboard layout based on stakeholder interviews</li>
+                    <li>Implemented key metrics: revenue, growth rate, win rate, and average deal size</li>
+                    <li>Added interactive filters for region, product line, and time period</li>
+                    <li>Created drill-down capabilities for detailed analysis</li>
+                    <li>Established automated daily data refresh schedule</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Features</h3>
+                <p><strong>Executive Summary:</strong> High-level KPIs with year-over-year comparisons</p>
+                <p><strong>Regional Performance:</strong> Geographic heat map showing sales distribution</p>
+                <p><strong>Product Analysis:</strong> Revenue breakdown by product category with trends</p>
+                <p><strong>Rep Performance:</strong> Individual sales rep metrics and rankings</p>
+                <p><strong>Pipeline Health:</strong> Deal progression tracking and forecasting</p>
+            </div>
+
+            <div class="dashboard-embed">
+                <p style="font-size: 18px; font-weight: 600;">Interactive Tableau Dashboard</p>
+                <p style="margin-top: 10px; opacity: 0.7;">Sales dashboard visualization will be embedded here</p>
+                <!-- Replace with actual Tableau embed code -->
+            </div>
+
+            <div class="content-section">
+                <h2>Technical Implementation</h2>
+                <p>The dashboard was built on a robust data pipeline:</p>
+                <ul>
+                    <li>Extracted data from Salesforce CRM and internal databases</li>
+                    <li>Transformed data using SQL stored procedures</li>
+                    <li>Created calculated fields for complex metrics (YoY growth, quota attainment)</li>
+                    <li>Implemented row-level security for role-based access</li>
+                    <li>Optimized dashboard performance for datasets with 500K+ rows</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Impact & Results</h2>
+                <ul>
+                    <li>Reduced reporting time from 8 hours to 5 minutes per week</li>
+                    <li>Enabled real-time decision making for sales leadership</li>
+                    <li>Improved forecast accuracy by 18% through better visibility</li>
+                    <li>Identified underperforming regions, leading to targeted coaching</li>
+                    <li>Dashboard adopted by 50+ users across sales and operations teams</li>
+                    <li>Annual cost savings of $45K in reporting labor</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>User Feedback</h2>
+                <div class="highlight-box">
+                    <p style="font-style: italic;">"This dashboard has transformed how we manage our sales team. We can now spot issues and opportunities in real-time rather than waiting for end-of-month reports. The drill-down capabilities are particularly powerful."</p>
+                    <p style="margin-top: 16px; font-weight: 600;">— VP of Sales</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Lessons Learned</h2>
+                <p>The most important lesson from this project was the value of early stakeholder involvement. By conducting interviews with sales reps, managers, and executives before building the dashboard, I ensured that the final product met everyone's needs.</p>
+                <p>Another key learning was the importance of performance optimization—initially, the dashboard took 30+ seconds to load, but through data modeling improvements and extract optimization, load time was reduced to under 5 seconds.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">İREM ÜNAL</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN →</a>
+                    <a href="https://github.com/iremunal" target="_blank">GITHUB →</a>
+                    <a href="https://public.tableau.com/profile/iremunal" target="_blank">TABLEAU PUBLIC →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2026 · All Rights Reserved</p>
+                <p>Available for freelance work</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

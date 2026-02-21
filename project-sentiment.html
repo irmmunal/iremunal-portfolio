@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Sentiment Analysis - İrem Ünal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">İREM ÜNAL</a>
+            <div class="nav-menu">
+                <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN ↗</a>
+                <a href="index.html#projects">PROJECTS ↗</a>
+                <a href="index.html#tech">RESUME ↗</a>
+            </div>
+            <a href="mailto:your.email@example.com" class="cta-button">LET'S TALK →</a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <h1>Social Media Sentiment Analysis</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role:</span> Data Analyst
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration:</span> 6 weeks
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools:</span> Python, NLP, VADER
+                </div>
+            </div>
+            <div class="tags">
+                <span class="tag">NLP</span>
+                <span class="tag">Python</span>
+                <span class="tag">VADER</span>
+                <span class="tag">Text Analysis</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>Analyzed customer sentiment from 50,000+ social media posts to understand brand perception and identify product improvement opportunities. The project processed posts from Twitter, Reddit, and product review sites using natural language processing techniques.</p>
+                <p>The analysis delivered actionable insights that directly influenced product development and customer service strategy.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Business Context</h2>
+                <p>The company launched a new product line but lacked systematic insight into customer sentiment. Traditional surveys provided limited feedback with low response rates, while thousands of organic customer comments remained unanalyzed.</p>
+                <p>The marketing and product teams needed to understand not just whether customers were satisfied, but specifically what they loved, what frustrated them, and what features they wanted most.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Methodology</h2>
+                <ul>
+                    <li>Data collection via APIs and web scraping (Twitter API, Reddit API)</li>
+                    <li>Text preprocessing: cleaning, tokenization, lemmatization</li>
+                    <li>Sentiment scoring using VADER (Valence Aware Dictionary and sEntiment Reasoner)</li>
+                    <li>Topic modeling with Latent Dirichlet Allocation (LDA)</li>
+                    <li>Time series analysis of sentiment trends</li>
+                    <li>Aspect-based sentiment analysis for specific product features</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Findings</h3>
+                <p><strong>Overall Sentiment:</strong> 52% positive, 31% neutral, 17% negative</p>
+                <p><strong>Peak Negativity:</strong> Spike in negative sentiment 2 weeks post-launch due to shipping delays</p>
+                <p><strong>Product Quality:</strong> 78% positive mentions about build quality</p>
+                <p><strong>Customer Service:</strong> 65% of negative comments related to support response time</p>
+                <p><strong>Top Request:</strong> Battery life mentioned in 1,200+ posts as improvement area</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Python Implementation</h2>
+                <p>Core sentiment analysis code:</p>
+                <div class="highlight-box">
+<pre style="font-family: monospace; font-size: 13px; line-height: 1.6; overflow-x: auto;">
+import pandas as pd
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import re
+
+# Initialize VADER
+analyzer = SentimentIntensityAnalyzer()
+
+def preprocess_text(text):
+    # Remove URLs, mentions, hashtags
+    text = re.sub(r'http\S+|www\S+|@\w+|#\w+', '', text)
+    # Remove special characters
+    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    return text.lower().strip()
+
+def get_sentiment(text):
+    scores = analyzer.polarity_scores(text)
+    if scores['compound'] >= 0.05:
+        return 'positive'
+    elif scores['compound'] <= -0.05:
+        return 'negative'
+    else:
+        return 'neutral'
+
+# Apply to dataset
+df['clean_text'] = df['text'].apply(preprocess_text)
+df['sentiment'] = df['clean_text'].apply(get_sentiment)
+df['sentiment_score'] = df['clean_text'].apply(
+    lambda x: analyzer.polarity_scores(x)['compound']
+)
+</pre>
+                </div>
+            </div>
+
+            <div class="dashboard-embed">
+                <p style="font-size: 18px; font-weight: 600;">Sentiment Trends Dashboard</p>
+                <p style="margin-top: 10px; opacity: 0.7;">Interactive sentiment visualization will be embedded here</p>
+                <!-- Replace with actual dashboard embed code -->
+            </div>
+
+            <div class="content-section">
+                <h2>Actionable Recommendations</h2>
+                <p>Based on the analysis, three priority actions were identified:</p>
+                
+                <div class="highlight-box">
+                    <h3>1. Improve Customer Support Response Time</h3>
+                    <p>Implement chatbot for common queries and expand support team to reduce wait times from 48 hours to 4 hours. This addressed the #1 source of negative sentiment.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>2. Enhance Battery Performance</h3>
+                    <p>Prioritize battery optimization in next software update and communicate improvement timeline to customers. This addressed the most frequently requested feature.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>3. Address Shipping Issues</h3>
+                    <p>Partner with alternative logistics providers and provide proactive shipping updates to customers. This would prevent the post-launch sentiment spike in future product releases.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Business Impact</h2>
+                <ul>
+                    <li>All recommendations implemented within 6 weeks of presentation</li>
+                    <li>Customer satisfaction score improved from 3.2 to 4.1 stars (28% increase)</li>
+                    <li>Negative sentiment decreased by 40% after addressing key issues</li>
+                    <li>Support ticket volume reduced by 35% after chatbot deployment</li>
+                    <li>Analysis framework adopted for ongoing monthly monitoring</li>
+                    <li>Product team integrated sentiment tracking into development roadmap</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Technical Challenges</h2>
+                <p>The biggest challenge was handling sarcasm and context-dependent sentiment. For example, "Great, now it won't turn on" tested as positive due to the word "great" but was clearly negative.</p>
+                <p>This was addressed by:</p>
+                <ul>
+                    <li>Implementing custom rules for common sarcastic phrases</li>
+                    <li>Manual review and labeling of 500+ ambiguous posts</li>
+                    <li>Fine-tuning VADER's lexicon with domain-specific terms</li>
+                    <li>Adding negation detection to improve accuracy</li>
+                </ul>
+                <p>These improvements increased sentiment classification accuracy from 78% to 91%.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Lessons Learned</h2>
+                <p>This project taught me that sentiment analysis is most powerful when combined with topic modeling. Understanding not just how people feel, but what they're talking about when they express those feelings, provides much richer insights.</p>
+                <p>It also reinforced the importance of continuous monitoring—sentiment isn't static, and tracking changes over time revealed patterns (like the shipping spike) that a one-time analysis would have missed.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">İREM ÜNAL</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN →</a>
+                    <a href="https://github.com/iremunal" target="_blank">GITHUB →</a>
+                    <a href="https://public.tableau.com/profile/iremunal" target="_blank">TABLEAU PUBLIC →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2026 · All Rights Reserved</p>
+                <p>Available for freelance work</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Funnel Analysis - İrem Ünal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">İREM ÜNAL</a>
+            <div class="nav-menu">
+                <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN ↗</a>
+                <a href="index.html#projects">PROJECTS ↗</a>
+                <a href="index.html#tech">RESUME ↗</a>
+            </div>
+            <a href="mailto:your.email@example.com" class="cta-button">LET'S TALK →</a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <h1>E-Commerce Funnel Analysis</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role:</span> Data Analyst
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration:</span> 2 months
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools:</span> BigQuery, SQL, Looker Studio
+                </div>
+            </div>
+            <div class="tags">
+                <span class="tag">BigQuery</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Looker Studio</span>
+                <span class="tag">GA4</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>Built an end-to-end e-commerce funnel dashboard using GA4 data integrated with SQL in BigQuery. This project visualized the complete customer journey—from initial session to final conversion—using Looker Studio to create an interactive, real-time dashboard for stakeholders.</p>
+                <p>The analysis identified critical drop-off points in the conversion funnel and provided data-driven recommendations for UX improvements.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Business Challenge</h2>
+                <p>The e-commerce platform was experiencing high cart abandonment rates and unclear visibility into the customer journey. Marketing and product teams needed a comprehensive view of user behavior across all touchpoints to identify friction points and optimize the conversion path.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Solution Approach</h2>
+                <ul>
+                    <li>Integrated GA4 data with BigQuery for advanced SQL analysis</li>
+                    <li>Designed funnel stages: Session → Product View → Add to Cart → Checkout → Purchase</li>
+                    <li>Built custom SQL queries to calculate drop-off rates at each stage</li>
+                    <li>Created Looker Studio dashboard with drill-down capabilities</li>
+                    <li>Segmented analysis by traffic source, device type, and user demographics</li>
+                    <li>Implemented automated daily data refresh for real-time insights</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Critical Insights</h3>
+                <p><strong>Cart Abandonment:</strong> 68% of users who added items to cart didn't complete checkout</p>
+                <p><strong>Mobile Gap:</strong> Mobile conversion rate was 40% lower than desktop</p>
+                <p><strong>Checkout Friction:</strong> Users spent average of 4.2 minutes at checkout—2x the industry benchmark</p>
+                <p><strong>Traffic Source:</strong> Organic traffic converted 2.3x better than paid ads</p>
+            </div>
+
+            <div class="dashboard-embed">
+                <p style="font-size: 18px; font-weight: 600;">Looker Studio Dashboard</p>
+                <p style="margin-top: 10px; opacity: 0.7;">Interactive funnel visualization will be embedded here</p>
+                <!-- Replace with actual Looker Studio embed code -->
+            </div>
+
+            <div class="content-section">
+                <h2>SQL Implementation</h2>
+                <p>Key query example for calculating funnel drop-offs:</p>
+                <div class="highlight-box">
+<pre style="font-family: monospace; font-size: 13px; line-height: 1.6; overflow-x: auto;">
+WITH funnel_stages AS (
+  SELECT 
+    user_pseudo_id,
+    MAX(CASE WHEN event_name = 'session_start' THEN 1 ELSE 0 END) AS session,
+    MAX(CASE WHEN event_name = 'view_item' THEN 1 ELSE 0 END) AS product_view,
+    MAX(CASE WHEN event_name = 'add_to_cart' THEN 1 ELSE 0 END) AS add_to_cart,
+    MAX(CASE WHEN event_name = 'begin_checkout' THEN 1 ELSE 0 END) AS checkout,
+    MAX(CASE WHEN event_name = 'purchase' THEN 1 ELSE 0 END) AS purchase
+  FROM `project.analytics.events_*`
+  WHERE _TABLE_SUFFIX BETWEEN '20250101' AND '20250131'
+  GROUP BY user_pseudo_id
+)
+SELECT 
+  SUM(session) AS sessions,
+  SUM(product_view) AS product_views,
+  SUM(add_to_cart) AS cart_adds,
+  SUM(checkout) AS checkouts,
+  SUM(purchase) AS purchases,
+  ROUND(SUM(product_view) / SUM(session) * 100, 2) AS view_rate,
+  ROUND(SUM(add_to_cart) / SUM(product_view) * 100, 2) AS add_rate,
+  ROUND(SUM(checkout) / SUM(add_to_cart) * 100, 2) AS checkout_rate,
+  ROUND(SUM(purchase) / SUM(checkout) * 100, 2) AS conversion_rate
+FROM funnel_stages;
+</pre>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Results & Impact</h2>
+                <p>The dashboard and subsequent optimizations led to significant improvements:</p>
+                <ul>
+                    <li>Overall conversion rate increased by 12%</li>
+                    <li>Cart abandonment reduced from 68% to 54%</li>
+                    <li>Mobile checkout completion improved by 28%</li>
+                    <li>Average checkout time reduced to 2.1 minutes</li>
+                    <li>Revenue impact: $450K additional quarterly revenue</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>UX Recommendations Implemented</h2>
+                <ul>
+                    <li>Simplified mobile checkout flow from 5 steps to 3</li>
+                    <li>Added guest checkout option (increased conversion by 15%)</li>
+                    <li>Implemented progress bar in checkout process</li>
+                    <li>Added abandoned cart email campaign (recovered 23% of abandoned carts)</li>
+                    <li>Optimized page load speed on product pages (reduced bounce rate by 18%)</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Lessons Learned</h2>
+                <p>This project reinforced the importance of combining quantitative data with qualitative insights. While the funnel analysis identified where users dropped off, understanding why required additional user research and A/B testing.</p>
+                <p>The real-time dashboard became an essential tool for the product team, enabling rapid iteration and data-informed decision-making.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">İREM ÜNAL</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN →</a>
+                    <a href="https://github.com/iremunal" target="_blank">GITHUB →</a>
+                    <a href="https://public.tableau.com/profile/iremunal" target="_blank">TABLEAU PUBLIC →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2026 · All Rights Reserved</p>
+                <p>Available for freelance work</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

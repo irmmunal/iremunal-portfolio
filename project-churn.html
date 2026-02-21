@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Analysis - İrem Ünal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">İREM ÜNAL</a>
+            <div class="nav-menu">
+                <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN ↗</a>
+                <a href="index.html#projects">PROJECTS ↗</a>
+                <a href="index.html#tech">RESUME ↗</a>
+            </div>
+            <a href="mailto:your.email@example.com" class="cta-button">LET'S TALK →</a>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <h1>Customer Churn Analysis</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role:</span> Data Analyst
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Duration:</span> 3 months
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools:</span> Python, Pandas, Scikit-learn
+                </div>
+            </div>
+            <div class="tags">
+                <span class="tag">Predictive Modeling</span>
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>This project aimed to identify customers at high risk of churning from a telecommunications company. By analyzing customer behavior patterns, service usage, and demographic information, I developed a predictive model that could flag at-risk customers before they left the service.</p>
+                <p>The analysis revealed critical insights into the factors driving customer attrition and provided actionable recommendations for retention strategies.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Problem Statement</h2>
+                <p>The company was experiencing a 15% annual churn rate, significantly impacting revenue. Traditional reactive approaches to customer retention were proving ineffective. The business needed a proactive system to identify at-risk customers early enough to implement targeted retention campaigns.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Methodology</h2>
+                <p>The analysis followed a structured approach:</p>
+                <ul>
+                    <li>Data cleaning and preprocessing of 50,000+ customer records</li>
+                    <li>Exploratory data analysis to identify patterns and correlations</li>
+                    <li>Feature engineering to create meaningful predictors</li>
+                    <li>Model development using Logistic Regression with cross-validation</li>
+                    <li>Model evaluation and interpretation using confusion matrix and ROC curves</li>
+                    <li>Business impact analysis and recommendation development</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Findings</h3>
+                <p><strong>Contract Type:</strong> Month-to-month contracts showed 3x higher churn rate compared to yearly contracts</p>
+                <p><strong>Customer Support:</strong> Customers with 3+ support tickets in the last quarter had 45% higher churn probability</p>
+                <p><strong>Service Usage:</strong> Low data usage (< 5GB/month) correlated with increased churn risk</p>
+                <p><strong>Payment Method:</strong> Electronic check users showed higher churn rates than automatic payment users</p>
+            </div>
+
+            <div class="dashboard-embed">
+                <p style="font-size: 18px; font-weight: 600;">Interactive Tableau Dashboard</p>
+                <p style="margin-top: 10px; opacity: 0.7;">Dashboard visualization will be embedded here</p>
+                <!-- Replace with actual Tableau embed code -->
+            </div>
+
+            <div class="content-section">
+                <h2>Results & Impact</h2>
+                <p>The predictive model achieved <strong>22% improvement in churn prediction accuracy</strong> compared to the baseline rule-based system. Key metrics:</p>
+                <ul>
+                    <li>Model Accuracy: 84%</li>
+                    <li>Precision for high-risk customers: 78%</li>
+                    <li>Recall: 81%</li>
+                    <li>ROC-AUC Score: 0.89</li>
+                </ul>
+                <p>When implemented as part of the retention strategy, the model helped reduce overall churn by 7% in the first quarter, representing approximately $2.3M in retained revenue.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Strategic Recommendations</h2>
+                <ul>
+                    <li>Implement proactive outreach program for customers in their first 6 months</li>
+                    <li>Offer incentives for converting month-to-month contracts to annual plans</li>
+                    <li>Improve customer support experience, especially for technical issues</li>
+                    <li>Create engagement campaigns for low-usage customers</li>
+                    <li>Develop retention offers specifically for electronic check payers</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">İREM ÜNAL</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com/in/iremunal" target="_blank">LINKEDIN →</a>
+                    <a href="https://github.com/iremunal" target="_blank">GITHUB →</a>
+                    <a href="https://public.tableau.com/profile/iremunal" target="_blank">TABLEAU PUBLIC →</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2026 · All Rights Reserved</p>
+                <p>Available for freelance work</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
